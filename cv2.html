@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CV - Pablo Sambuco</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f5f6fa;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 20px;
+        }
+
+        /* --- NUEVOS ESTILOS PARA EL SELECTOR DE IDIOMA --- */
+        .lang-selector {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: white;
+            padding: 5px 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            font-weight: bold;
+            z-index: 100; /* Asegura que esté por encima de todo */
+        }
+
+        .lang-option {
+            cursor: pointer;
+            color: var(--secondary-color);
+            opacity: 0.5;
+            transition: opacity 0.3s ease;
+        }
+
+        .lang-option.active {
+            opacity: 1;
+            text-decoration: underline;
+            color: var(--accent-color);
+        }
+        /* -------------------------------------------------- */
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        header {
+            background-color: var(--primary-color);
+            color: #fff;
+            padding: 40px;
+            text-align: center;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+        }
+
+        header h2 {
+            margin: 10px 0 0;
+            font-weight: normal;
+            color: var(--accent-color);
+        }
+
+        .contact-info {
+            margin-top: 20px;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .contact-info a {
+            color: #fff;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+        }
+
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        .content-wrap {
+            padding: 40px;
+        }
+
+        section {
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--accent-color);
+            padding-bottom: 10px;
+            margin-top: 0;
+        }
+
+        .job, .project {
+            margin-bottom: 20px;
+        }
+
+        .job h4, .project h4 {
+            margin-bottom: 5px;
+            color: var(--secondary-color);
+        }
+
+        .date {
+            font-style: italic;
+            color: #7f8c8d;
+            margin-bottom: 10px;
+        }
+
+        ul {
+            padding-left: 20px;
+        }
+
+        li {
+            margin-bottom: 5px;
+        }
+
+        .skills-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            padding: 0;
+            list-style: none;
+        }
+
+        .skills-list li {
+            background-color: var(--accent-color);
+            color: #fff;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-size: 0.9em;
+        }
+
+        @media (max-width: 600px) {
+            header {
+                padding: 30px 20px;
+            }
+            .content-wrap {
+                padding: 30px 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="lang-selector">
+        <span class="lang-option active" onclick="changeLanguage('es')">ES</span> | 
+        <span class="lang-option" onclick="changeLanguage('en')">EN</span>
+    </div>
+    <div class="container">
+        <header>
+            <h1>Pablo Sambuco</h1>
+            <h2 data-i18n="header_role">Desarrollador Full Stack | Entusiasta de la Tecnología</h2>
+            <div class="contact-info">
+                <a href="mailto:pablosambuco@gmail.com">Email: pablosambuco@gmail.com</a>
+                <a href="https://www.linkedin.com/in/pablosambuco" target="_blank">LinkedIn</a>
+                <a href="https://github.com/pablosambuco" target="_blank">GitHub</a>
+            </div>
+        </header>
+
+        <div class="content-wrap">
+            <section>
+                <h3 data-i18n="section_profile">Perfil</h3>
+                <p data-i18n="profile_desc">Desarrollador Full Stack apasionado con más de 5 años de experiencia en la creación de aplicaciones web robustas y escalables. Especializado en JavaScript (React, Node.js) y arquitecturas en la nube. Comprometido con las mejores prácticas de desarrollo, el código limpio y el aprendizaje continuo. Busco desafíos que me permitan innovar y aportar valor a través de la tecnología.</p>
+            </section>
+
+            <section>
+                <h3 data-i18n="section_experience">Experiencia Laboral</h3>
+                
+                <div class="job">
+                    <h4 data-i18n="job1_title">Desarrollador Full Stack Senior en TechSolutions Inc.</h4>
+                    <div class="date" data-i18n="job1_date">Enero 2020 - Presente</div>
+                    <ul>
+                        <li data-i18n="job1_desc1">Lideré el desarrollo de una plataforma de gestión de proyectos SaaS utilizada por más de 50,000 usuarios activos.</li>
+                        <li data-i18n="job1_desc2">Implementé microservicios con Node.js y Docker, mejorando la escalabilidad y reduciendo el tiempo de inactividad en un 30%.</li>
+                        <li data-i18n="job1_desc3">Mentoricé a un equipo de 4 desarrolladores junior, fomentando un ambiente de colaboración y crecimiento.</li>
+                    </ul>
+                </div>
+
+                <div class="job">
+                    <h4 data-i18n="job2_title">Desarrollador Web en InnovaDigital</h4>
+                    <div class="date" data-i18n="job2_date">Marzo 2018 - Diciembre 2019</div>
+                    <ul>
+                        <li data-i18n="job2_desc1">Desarrollé interfaces de usuario reactivas utilizando React y Redux para clientes del sector e-commerce.</li>
+                        <li data-i18n="job2_desc2">Optimicé el rendimiento del frontend, logrando una mejora del 40% en los tiempos de carga.</li>
+                        <li data-i18n="job2_desc3">Colaboré estrechamente con diseñadores UX/UI para asegurar la viabilidad técnica de los diseños.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section>
+                <h3 data-i18n="section_projects">Proyectos Destacados</h3>
+                <div class="project">
+                    <h4 data-i18n="proj1_title">Sistema de Gestión de Inventario IoT</h4>
+                    <p data-i18n="proj1_desc">Desarrollo de una aplicación web en tiempo real para monitorear inventario utilizando sensores IoT. Stack: React, Node.js, MQTT, MongoDB.</p>
+                </div>
+                <div class="project">
+                    <h4 data-i18n="proj2_title">App de Planificación Financiera Personal</h4>
+                    <p data-i18n="proj2_desc">Creación de una aplicación móvil híbrida (React Native) para seguimiento de gastos y presupuestos, con sincronización en la nube.</p>
+                </div>
+            </section>
+
+            <section>
+                <h3 data-i18n="section_skills">Habilidades Técnicas</h3>
+                <ul class="skills-list">
+                    <li>JavaScript (ES6+)</li>
+                    <li>React.js</li>
+                    <li>Node.js</li>
+                    <li>Express</li>
+                    <li>HTML5 & CSS3</li>
+                    <li>SQL (PostgreSQL)</li>
+                    <li>NoSQL (MongoDB)</li>
+                    <li>Git</li>
+                    <li>Docker</li>
+                    <li>AWS (Básico)</li>
+                </ul>
+            </section>
+
+            <section>
+                <h3 data-i18n="section_education">Educación</h3>
+                <div class="job">
+                    <h4 data-i18n="edu1_title">Ingeniería en Sistemas de Información</h4>
+                    <div class="date" data-i18n="edu1_date">Universidad Tecnológica Nacional (UTN) | 2013 - 2018</div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+    <script>
+        // Diccionario de traducciones
+        const translations = {
+            'es': {
+                'header_role': 'Desarrollador Full Stack | Entusiasta de la Tecnología',
+                'section_profile': 'Perfil',
+                'profile_desc': 'Desarrollador Full Stack apasionado con más de 5 años de experiencia en la creación de aplicaciones web robustas y escalables. Especializado en JavaScript (React, Node.js) y arquitecturas en la nube. Comprometido con las mejores prácticas de desarrollo, el código limpio y el aprendizaje continuo. Busco desafíos que me permitan innovar y aportar valor a través de la tecnología.',
+                'section_experience': 'Experiencia Laboral',
+                'job1_title': 'Desarrollador Full Stack Senior en TechSolutions Inc.',
+                'job1_date': 'Enero 2020 - Presente',
+                'job1_desc1': 'Lideré el desarrollo de una plataforma de gestión de proyectos SaaS utilizada por más de 50,000 usuarios activos.',
+                'job1_desc2': 'Implementé microservicios con Node.js y Docker, mejorando la escalabilidad y reduciendo el tiempo de inactividad en un 30%.',
+                'job1_desc3': 'Mentoricé a un equipo de 4 desarrolladores junior, fomentando un ambiente de colaboración y crecimiento.',
+                'job2_title': 'Desarrollador Web en InnovaDigital',
+                'job2_date': 'Marzo 2018 - Diciembre 2019',
+                'job2_desc1': 'Desarrollé interfaces de usuario reactivas utilizando React y Redux para clientes del sector e-commerce.',
+                'job2_desc2': 'Optimicé el rendimiento del frontend, logrando una mejora del 40% en los tiempos de carga.',
+                'job2_desc3': 'Colaboré estrechamente con diseñadores UX/UI para asegurar la viabilidad técnica de los diseños.',
+                'section_projects': 'Proyectos Destacados',
+                'proj1_title': 'Sistema de Gestión de Inventario IoT',
+                'proj1_desc': 'Desarrollo de una aplicación web en tiempo real para monitorear inventario utilizando sensores IoT. Stack: React, Node.js, MQTT, MongoDB.',
+                'proj2_title': 'App de Planificación Financiera Personal',
+                'proj2_desc': 'Creación de una aplicación móvil híbrida (React Native) para seguimiento de gastos y presupuestos, con sincronización en la nube.',
+                'section_skills': 'Habilidades Técnicas',
+                'section_education': 'Educación',
+                'edu1_title': 'Ingeniería en Sistemas de Información',
+                'edu1_date': 'Universidad Tecnológica Nacional (UTN) | 2013 - 2018'
+            },
+            'en': {
+                'header_role': 'Full Stack Developer | Technology Enthusiast',
+                'section_profile': 'Profile',
+                'profile_desc': 'Passionate Full Stack Developer with over 5 years of experience in creating robust and scalable web applications. Specialized in JavaScript (React, Node.js) and cloud architectures. Committed to development best practices, clean code, and continuous learning. Seeking challenges that allow me to innovate and provide value through technology.',
+                'section_experience': 'Work Experience',
+                'job1_title': 'Senior Full Stack Developer at TechSolutions Inc.',
+                'job1_date': 'January 2020 - Present',
+                'job1_desc1': 'Led the development of a SaaS project management platform used by over 50,000 active users.',
+                'job1_desc2': 'Implemented microservices using Node.js and Docker, improving scalability and reducing downtime by 30%.',
+                'job1_desc3': 'Mentored a team of 4 junior developers, fostering a collaborative environment and growth.',
+                'job2_title': 'Web Developer at InnovaDigital',
+                'job2_date': 'March 2018 - December 2019',
+                'job2_desc1': 'Developed reactive user interfaces using React and Redux for e-commerce sector clients.',
+                'job2_desc2': 'Optimized frontend performance, achieving a 40% improvement in load times.',
+                'job2_desc3': 'Collaborated closely with UX/UI designers to ensure technical feasibility of designs.',
+                'section_projects': 'Featured Projects',
+                'proj1_title': 'IoT Inventory Management System',
+                'proj1_desc': 'Development of a real-time web application to monitor inventory using IoT sensors. Stack: React, Node.js, MQTT, MongoDB.',
+                'proj2_title': 'Personal Financial Planning App',
+                'proj2_desc': 'Creation of a hybrid mobile application (React Native) for expense tracking and budgeting, with cloud synchronization.',
+                'section_skills': 'Technical Skills',
+                'section_education': 'Education',
+                'edu1_title': 'Information Systems Engineering',
+                'edu1_date': 'National Technological University (UTN) | 2013 - 2018'
+            }
+        };
+
+        function changeLanguage(lang) {
+            // 1. Actualizar el atributo lang del HTML
+            document.documentElement.lang = lang;
+
+            // 2. Buscar todos los elementos con el atributo data-i18n
+            const elementsToTranslate = document.querySelectorAll('[data-i18n]');
+            
+            elementsToTranslate.forEach(element => {
+                const key = element.getAttribute('data-i18n');
+                // Si existe la traducción para esa clave en el idioma seleccionado, aplicarla
+                if (translations[lang] && translations[lang][key]) {
+                    element.textContent = translations[lang][key];
+                }
+            });
+
+            // 3. Actualizar el estilo visual del selector
+            const options = document.querySelectorAll('.lang-option');
+            options.forEach(option => {
+                // Si el texto del botón coincide con el idioma seleccionado, añadir clase 'active'
+                if (option.textContent.toLowerCase() === lang) {
+                    option.classList.add('active');
+                } else {
+                    option.classList.remove('active');
+                }
+            });
+        }
+    </script>
+    </body>
+</html>
